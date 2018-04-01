@@ -1,1 +1,17 @@
-# Micro
+1.	O que são sistemas embarcados? 
+Sistemas embarcados são sistemas em que há um processador conectado a um sistema que ele controla, a fim de otimizar o processo, realizando tarefas especificas que foram pré estabelecidas.
+2.	O que são sistemas microprocesssados? 
+São sistemas que utilizam de um microprocessador para integrar atividades diferentes se comunicando com a memória.
+3.	Apresente aplicações de sistemas embarcados:
+(a) para a indústria automotiva; 
+      Na indústria automotiva os sistemas embarcados são utilizados por exemplo na confecção dos sistemas de GPS e navegação, no alarme, controle de tração, controle de transmissão e carroceria entre outros.
+(b) para eletrodomésticos; 
+      Nos eletrodomésticos os sistemas embarcados podem ser utilizados para confecção dos painéis de controle, temporizadores dentre outros;
+(c) para automação industrial.
+      Para automação industrial pode ser utilizado para integrar padrões de comunicação de dados facilitando assim o fluxo das informações nos processos utilizados para produção produção bem como na segurança operacional que será proporcionada.
+4.	Cite arquiteturas possíveis e as diferenças entre elas.
+      Arquitetura de von Neumann  e harvard.
+      A máquina proposta por Von Neumann reúne os seguintes componentes: (i) uma memória, (ii) uma unidade aritmética e lógica (ALU), (iii) uma unidade central de processamento (CPU), composta por diversos registradores, e (iv) uma Unidade de Controle (CU), cuja função é a mesma da tabela de controle da Máquina de Turing universal: buscar um programa na memória, instrução por instrução, e executá-lo sobre os dados de entrada.
+      A Arquitetura de Harvard baseia-se em um conceito mais recente que a de Von-Neumann, tendo vindo da necessidade de por o microcontrolador para trabalhar mais rápido. É uma arquitetura de computador que se distingue das outras por possuir duas memórias diferentes e independentes em termos de barramento e ligação ao processador.
+5.	Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
+Utiliza-se esta placa controladora, pois todos os processos dela são previamente definidos por nós fazendo com que possamos otimizar os processos ao máximo fazendo com que haja redução de CI’s utilizados consequentemente, deixando o projeto desejado mais enxuto para sua confecção final.
