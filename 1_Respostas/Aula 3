@@ -2,7 +2,9 @@
 questões
 1-
 
-2-#include <msp430g2553.h>
+2-
+
+#include <msp430g2553.h>
 #define led1 BIT0
 #define led2 BIT6
 #define leds  (led1 | led2)
@@ -17,4 +19,148 @@ int main(void)
   return 0;
  
 }
+
 3-
+
+#include <msp430g2553.h>
+#define LED1 BIT0
+#define LED2 BIT6
+#define LEDS (LED1|LED2)
+#define BTN  BIT3
+void atraso(volatile unsigned int i)
+{
+  while((i--)>0);
+}
+int main(void)
+{
+  WDTCTL = WDTPW | WDTHOLD;  //parando timer
+  P1DIR |= LEDS; // definindo leds como saida
+  P1DIR &= ~BTN;// definindo BTN como entrada (inverte o valor de BTN e faz uma and com o p1dir  forçando assim o bit definido em BTN ir pra 0)
+  P1REN |= BTN; // ativa o resistor de pul-up ou pull-down quando o botão é acionado
+  P1OUT |= BTN; // joga o BTN para um buffer e joga para nivel alto quando o pino BTN for definido como saida;
+
+ while(1)
+ {
+    if((P1IN&BTN)==0){ // se 
+      P1OUT = LEDS+BTN;
+      atraso(0xffff);
+      P1OUT &= ~LEDS;
+      atraso(0xffff);
+      P1OUT = LEDS+BTN;
+      atraso(0xffff);
+    }
+    else
+      P1OUT &= ~LEDS;
+ }   
+    
+  return 0;
+}
+
+4-
+
+#include <msp430g2553.h>
+#define LED1 BIT0
+#define LED2 BIT6
+#define LEDS (LED1|LED2)
+#define BTN  BIT3
+void atraso(volatile unsigned int i)
+{
+  while((i--)>0);
+}
+int main(void)
+{
+  WDTCTL = WDTPW | WDTHOLD;  //parando timer
+  P1DIR |= LEDS; // definindo leds como saida
+  P1DIR &= ~BTN;// definindo BTN como entrada (inverte o valor de BTN e faz uma and com o p1dir  forçando assim o bit definido em BTN ir pra 0)
+  P1REN |= BTN; // ativa o resistor de pul-up ou pull-down quando o botão é acionado
+  P1OUT |= BTN; // joga o BTN para um buffer e joga para nivel alto quando o pino BTN for definido como saida;
+
+ 
+    P1OUT = LEDS;
+    atraso(0xffff);
+      P1OUT &= ~LEDS;
+   
+    
+  return 0;
+}
+
+5-
+
+#include <msp430g2553.h>
+#define LED1 BIT0
+#define LED2 BIT6
+#define LEDS (LED1|LED2)
+#define BTN  BIT3
+void atraso(volatile unsigned int i)
+{
+  while((i--)>0);
+}
+
+void piscar (void) 
+{
+    P1OUT = LEDS;
+    atraso(0xffff);
+    P1OUT &= ~LEDS;
+    atraso(0xffff);
+  }
+int main(void)
+{
+  WDTCTL = WDTPW | WDTHOLD;  //parando timer
+  P1DIR |= LEDS; // definindo leds como saida
+  P1DIR &= ~BTN;// definindo BTN como entrada (inverte o valor de BTN e faz uma and com o p1dir  forçando assim o bit definido em BTN ir pra 0)
+  P1REN |= BTN; // ativa o resistor de pul-up ou pull-down quando o botão é acionado
+  P1OUT |= BTN; // joga o BTN para um buffer e joga para nivel alto quando o pino BTN for definido como saida;
+
+ while(1){
+  
+    piscar();
+ }   
+  return 0;
+}
+
+
+6-
+
+#include <msp430g2553.h>
+#define LED1 BIT0
+#define LED2 BIT6
+#define LEDS (LED1|LED2)
+#define BTN  BIT3
+void atraso(volatile unsigned int i)
+{
+  while((i--)>0);
+}
+
+void piscar (void) 
+{
+    P1OUT = LEDS+BTN;
+      atraso(0xffff);
+      P1OUT &= ~LEDS;
+      atraso(0xffff);
+  }
+  
+int main(void)
+{
+  WDTCTL = WDTPW | WDTHOLD;  //parando timer
+  P1DIR |= LEDS; // definindo leds como saida
+  P1DIR &= ~BTN;// definindo BTN como entrada (inverte o valor de BTN e faz uma and com o p1dir  forçando assim o bit definido em BTN ir pra 0)
+  P1REN |= BTN; // ativa o resistor de pul-up ou pull-down quando o botão é acionado
+  P1OUT |= BTN; // joga o BTN para um buffer e joga para nivel alto quando o pino BTN for definido como saida;
+
+ while(1)
+ {
+    if((P1IN&BTN)==0){ // se 
+      
+     piscar();
+     piscar();
+    }
+    else
+      P1OUT &= ~LEDS;
+ }   
+    
+  return 0;
+}
+
+
+
+
