@@ -1,1 +1,40 @@
+Questões
+1-Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
+a) mov.w R4,R11;
+   add.w R11,R11;
+   add.w R11,R11;
+   add.w R11,R4;
+   
+b) add.w R5,R5;
+   add.w R5,R5;
+   Add.w R5,R5;
+
+d) mow.w 2[R9],4[R9];
+   add.w 4[R9],4[R9];
+   add.w 4[R9],4[R9];
+   add.w 4[R9],4[R9];
+   mov.w 1[R9],R11;
+   add.w R11,R11;
+   add.w R11,R11;
+   add.w R4,R11;
+   add.w R11,4[R9];
+   
+e) mov.w R4,6[R9];
+   add.w 6[R9],6[R9];
+   add.w R4,6[R9];
+   mov.w R6,R11;
+   add.w R11,R11;
+   add.w R11,R11;
+   add.w R6,R11;
+   sub.w R11,6[R9];
+ 
+f) mov.w R4,10[R9];
+   mov.w R6,R11;
+   add.w R11,R11;
+   sub.w R11,10[R9];
+   add.w 10[R9],10[R9];
+   add.w 10[R9],10[R9];
+   add.w 10[R9],10[R9];
+   
+   
 
