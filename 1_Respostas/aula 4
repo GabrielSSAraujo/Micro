@@ -1,1 +1,46 @@
+QUestoes aula 4
+1-Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w e sub.w.
+a) mov.w 0,R4;
+b) add.w 1,R5;
+c) sub.w 1,R6;
+d) add.w 2,R7;
+e) sub.w 2,R8;
+
+2-Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
+
+a) clr.w R4;
+b) inc.w R5;
+c) dec.w R6;
+d) incd.w R7;
+e) decd.w R8;
+
+3- Traduza as seguintes linhas em C para a linguagem assembly do MSP430. Utilize somente as seguintes instruções: mov.w, add.w, sub.w, clr.w, dec.w, decd.w, inc.w e incd.w.
+
+a) add.w R4,R4;
+
+b) mov.w R5,R11;
+   add.w R11,R11;
+   add.w R11,R5;
+   
+c) add.w R6,R6;
+   add.w R6,R6;
+   
+d) mov.w 2[R9],4[R9];
+   add.w 1[R9],4[R9];
+   
+e) mov.w R4,6[R9];
+   add.w 6[R9],6[R9];
+   mov.w R6,R11;
+   add.w R11,R11;
+   add.w R11,R11;
+   sub.w R11,6[R9];
+   
+f)  mov.w R6,R11;
+    add.w R11,R11;
+    mov.w R4,6[R9];
+    sub.w R11,6[R9];
+    add.w 6[R9],6[R9];
+   
+
+
 
