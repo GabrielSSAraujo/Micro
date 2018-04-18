@@ -1,1 +1,75 @@
+1-
+a) setar bit menos significativo de R5.
+   mov.w #1,R11;
+   bis.w R11,R5;
+   
+b) Somente setar dois bits de R6: o menos significativo e o segundo menos significativo. 
+   mov.w #3,R11;
+   bis.w R11,R6;
+   
+c) Somente zerar o terceiro bit menos significativo de R7.
+   mov.w #4,R11;
+   bic.w R11,R7;
+   
+d) Somente zerar o terceiro e o quarto bits menos significativo de R8.
+   mov.w #12,R11;
+   bic.w R11,R8;
+   
+e) Somente inverter o bit mais significativo de R9.
+   mov.w #128,R11;
+   xor.w R11,R8;
+   
+f) Inverter o nibble mais significativo de R10, e setar o nibble menos significativo de R10.
+   xor.w #240,R10;
+   bis.w #15,R10;
+   
+2-"Traduza" o seguinte trecho de código em C para o assembly do MSP430:
+
+   if(i>j) f = g+h+10;
+    else f = g-h-10;
+    
+    cmp R7,R8
+    jl ELSE
+     mov.w R5,R4;
+    add.w R6,R4;
+    add.w #10,R4;
+    jmp FIM
+    ELSE:
+    mov.w R5,R4;
+    sub.w R6,R4;
+    sub.w #10,R4;
+    
+    FIM:
+    
+3- "Traduza" o seguinte trecho de código em C para o assembly do MSP430:
+while(save[i]!=k) i++;
+
+mov.w R7,R12;
+rla.w R12;
+NNNNNNNNAaaaaaaaaaaooooo entendi essa parada;
+
+4 - 
+mov.w #0,R7;
+LOOP:
+mov.w R7,R12;
+add.w R12,R12;
+mov.w R12,R12(R9);
+
+
+inc.w R7;
+cmp R7,#100;
+jl EXIT
+jmp LOOP
+
+EXIT:
+
+
+
+
+
+
+
+
+
+
 
